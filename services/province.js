@@ -8,6 +8,13 @@ async function getAllProvince() {
        .then(res => {return res.json()})
 }
 
+async function getProvinceOf(regione){
+    let url = "https://api.pollo.host/istat-api/?query=provincediregione&regione="+regione;
+    let settings = {method: "Get"};
+    return fetch(url, settings)
+        .then(res => {return res.json()})
+}
 module.exports = {
-    getAllProvince
+    getAllProvince,
+    getProvinceOf
 }

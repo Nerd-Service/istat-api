@@ -12,4 +12,14 @@ router.get('/', async function(req, res, next) {
     }
 });
 
+router.get('/:regione', async function(req, res, next) {
+    try {
+        //req.params.provincia = 'provincia';
+        res.json(await province.getProvinceOf(req.params['regione']));
+    } catch (err) {
+        console.error(`Error while getting province `, err.message);
+        next(err);
+    }
+});
+
 module.exports = router;

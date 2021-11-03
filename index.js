@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const provinceRouter= require('./routes/province');
 const comuniRouter= require('./routes/comuni');
+const regioniRouter= require('./routes/regioni');
 
 const app = express();
 const port = 3000;
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 
 app.use('/province', provinceRouter)
 app.use('/comuni', comuniRouter)
+app.use('/regioni', regioniRouter)
 
 app.use((err, req, res, next) => {
     const statusCode = err.statusCode || 500;
