@@ -1,3 +1,3 @@
 # istat-api
 
-yarn install
+test
